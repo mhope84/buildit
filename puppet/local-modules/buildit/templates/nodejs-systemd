@@ -1,0 +1,14 @@
+[Unit]
+Description=Buildit Node.js App
+
+[Service]
+ExecStart=/usr/bin/node <%= @app_directory %>/index.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=buildit-nodejs
+User=<%= @app_user %>
+Group=<%= @app_group %>
+
+[Install]
+WantedBy=multi-user.target
