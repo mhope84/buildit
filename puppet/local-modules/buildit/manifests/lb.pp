@@ -6,7 +6,9 @@ class buildit::lb (
     validate_array($app_nodes)
 
     # include the apache class
-    class {'apache': }
+    class {'apache': 
+        default_vhost => false,
+    }
 
     # define a load balancer set
     apache::balancer { 'buildit': }
