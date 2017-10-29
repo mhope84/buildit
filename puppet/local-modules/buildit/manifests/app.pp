@@ -4,6 +4,7 @@ class buildit::app (
     $app_repo_url,
     $app_repo_revision,
     $app_directory = '/usr/local/nodeapp',
+    $app_tcp_port = '3000',
     $node_repo_package_name = 'nodesource-release-el7-1',
     $node_repo_package_url = 'https://rpm.nodesource.com/pub_6.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm',
     $node_package = 'nodejs',
@@ -68,6 +69,24 @@ class buildit::app (
         ensure  => 'running',
         enable  => 'true',
         require => [File[$systemd_unit_file], User[$app_user]],
+    }
+
+    # create firewald service for app
+    firewalld::custom_service{'buildit-app':
+        short       => 'buildit-app',
+        description => 'Service for Buildit test Node.JS app',
+        port        => [
+            {
+                'port'     => $app_tcp_port,
+                'protocol' => 'tcp',
+            } 
+        ],
+    }
+
+    firewalld_service { 'Allow Access to Node.JS app from the public zone':
+        ensure  => 'present',
+        service => 'buildit-app',
+        zone    => 'public',
     }
 
 }

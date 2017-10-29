@@ -6,6 +6,3 @@ buildit::app::app_group: 'buildit'
 buildit::app::app_repo_url: 'https://github.com/buildit/devops-test-webapp.git'
 buildit::app::app_repo_revision: 'master'
 
-# temp values for testing
-##buildit::app::app_user: 'root'
-##buildit::app::app_group: 'root'

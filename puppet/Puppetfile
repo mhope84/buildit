@@ -7,3 +7,7 @@ mod "puppetlabs/stdlib",
 mod "puppetlabs/vcsrepo",
   :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo.git',
   :tag => '2.1.0'
+
+mod "crayfishx/firewalld",
+  :git => 'https://github.com/crayfishx/puppet-firewalld.git',
+  :tag => '3.4.0'
