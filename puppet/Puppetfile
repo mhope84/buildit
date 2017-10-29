@@ -3,3 +3,7 @@
 mod "puppetlabs/stdlib",
   :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git',
   :tag => '4.20.0'
+
+mod "puppetlabs/vcsrepo",
+  :git => 'https://github.com/puppetlabs/puppetlabs-vcsrepo.git',
+  :tag => '2.1.0'
