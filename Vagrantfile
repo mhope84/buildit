@@ -27,4 +27,7 @@ Vagrant.configure("2") do |buildit|
 
   # install puppet via provision
   buildit.vm.provision :shell, path: "provision.sh"
+
+  # sync local folder into VM's
+  buildit.vm.synced_folder "puppet", "/tmp/puppet"
 end
