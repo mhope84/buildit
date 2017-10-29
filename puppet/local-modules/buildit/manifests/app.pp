@@ -67,7 +67,7 @@ class buildit::app (
     service {$service_name:
         ensure  => 'running',
         enable  => 'true',
-        require => File[$systemd_unit_file],
+        require => [File[$systemd_unit_file], User[$app_user]],
     }
 
 }
