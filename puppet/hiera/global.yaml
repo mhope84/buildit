@@ -6,3 +6,7 @@ buildit::app::app_group: 'buildit'
 buildit::app::app_repo_url: 'https://github.com/buildit/devops-test-webapp.git'
 buildit::app::app_repo_revision: 'master'
 
+# global setting for lb nodes
+buildit::lb::app_nodes:
+  - '192.168.12.10'
+  - '192.168.12.20'

@@ -11,3 +11,11 @@ mod "puppetlabs/vcsrepo",
 mod "crayfishx/firewalld",
   :git => 'https://github.com/crayfishx/puppet-firewalld.git',
   :tag => '3.4.0'
+
+mod "puppetlabs/apache",
+  :git => 'https://github.com/puppetlabs/puppetlabs-apache.git',
+  :tag => '2.3.0'
+
+mod "puppetlabs/concat",
+  :git => 'https://github.com/puppetlabs/puppetlabs-concat.git',
+  :tag => '4.1.0'
