@@ -11,6 +11,7 @@ Vagrant.configure("2") do |buildit|
   # define domain for all VM's
   domain = "test.local"
 
+  # define VM's
   buildit.vm.define :node1 do |config|
     config.vm.hostname = "app-node1.#{domain}"
     config.vm.network :private_network, ip: "192.168.12.10"
@@ -23,4 +24,7 @@ Vagrant.configure("2") do |buildit|
     config.vm.hostname = "load-balancer1.#{domain}"
     config.vm.network :private_network, ip: "192.168.12.30"
   end
+
+  # install puppet via provision
+  buildit.vm.provision :shell, path: "provision.sh"
 end
