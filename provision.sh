@@ -9,6 +9,9 @@ yum install puppet ruby git -y
 # install r10k (old version as newer have dependencie issues)
 gem install r10k -v 2.1.1
 
+# load puppet profie script
+. /etc/profile.d/puppet-agent.sh
+
 # replace /etc/puppet with the latest version
 if [[ -d /tmp/puppet ]]; then
 
