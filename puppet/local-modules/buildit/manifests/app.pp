@@ -83,6 +83,7 @@ class buildit::app (
         ],
     }
 
+    # allow access to the buildit service from the public zone
     firewalld_service { 'Allow Access to Node.JS app from the public zone':
         ensure  => 'present',
         service => 'buildit-app',
