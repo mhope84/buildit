@@ -8,5 +8,5 @@ buildit::app::app_repo_revision: 'master'
 
 # global setting for lb nodes
 buildit::lb::app_nodes:
-  - '192.168.12.10'
-  - '192.168.12.20'
+  - 'http://192.168.12.10:3000'
+  - 'http://192.168.12.20:3000'

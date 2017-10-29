@@ -11,13 +11,15 @@ class buildit::lb (
     }
 
     # define a load balancer set
-    apache::balancer { 'buildit': }
+    apache::balancer { 'buildit': 
+        proxy_set => { 'lbmethod' => 'bytraffic' },
+    }
 
     # define balancer set members
     $app_nodes.each |$app_node| {
         apache::balancermember { "${app_node}-buildit":
             balancer_cluster => 'buildit',
-            url              => "http://${app_node}:3000",
+            url              => "${app_node}",
         }
     }
 
