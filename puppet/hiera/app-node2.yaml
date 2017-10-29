@@ -1,1 +1,3 @@
 ---
+
+buildit::app_node: true
