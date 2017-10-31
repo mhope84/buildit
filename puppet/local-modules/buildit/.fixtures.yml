@@ -1,0 +1,14 @@
+fixtures:
+  repositories:
+    stdlib:
+      repo: "https://github.com/puppetlabs/puppetlabs-stdlib"
+    vscrepo:
+      repo: "https://github.com/puppetlabs/puppetlabs-vcsrepo"
+    concat:
+      repo: "https://github.com/puppetlabs/puppetlabs-concat"
+    apache:
+      repo: "https://github.com/puppetlabs/puppetlabs-apache"
+    firewalld:
+      repo: "https://github.com/crayfishx/puppet-firewalld"
+  symlinks:
+    buildit: "#{source_dir}"
