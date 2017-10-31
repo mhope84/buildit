@@ -67,7 +67,7 @@ class buildit::app (
     # start the service and ensure its set to start with the system
     service {$service_name:
         ensure  => 'running',
-        enable  => 'true',
+        enable  => true,
         require => [File[$systemd_unit_file], User[$app_user]],
     }
 
@@ -79,7 +79,7 @@ class buildit::app (
             {
                 'port'     => $app_tcp_port,
                 'protocol' => 'tcp',
-            } 
+            }
         ],
     }
 

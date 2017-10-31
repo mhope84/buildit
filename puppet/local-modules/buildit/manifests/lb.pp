@@ -1,17 +1,17 @@
 class buildit::lb (
     $app_nodes,
     ) {
-   
+
     # ensure app_nodes is an array
     validate_array($app_nodes)
 
     # include the apache class and ensure its default vhost is not deployed
-    class {'apache': 
+    class {'apache':
         default_vhost => false,
     }
 
     # define a load balancer set
-    apache::balancer { 'buildit': 
+    apache::balancer { 'buildit':
         proxy_set => { 'lbmethod' => 'bytraffic' },
     }
 
@@ -19,7 +19,7 @@ class buildit::lb (
     $app_nodes.each |$app_node| {
         apache::balancermember { "${app_node}-buildit":
             balancer_cluster => 'buildit',
-            url              => "${app_node}",
+            url              => $app_node,
         }
     }
 
@@ -27,8 +27,8 @@ class buildit::lb (
     class { 'apache::vhosts':
         vhosts => {
             'buildit_vhost' => {
-                'docroot' => '/var/www/html',
-                'port'    => '80',
+                'docroot'    => '/var/www/html',
+                'port'       => '80',
                 'proxy_pass' => [ {'path' => '/', 'url' => 'balancer://buildit' } ]
             },
         },
