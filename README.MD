@@ -10,14 +10,14 @@ All custom code is within this repository, however a number of 3rd party `puppet
     vagrant up
 
 ## IP's
-192.168.12.10 - This is the first app node
-192.168.12.20 - This is the second app node
-192.168.12.30 - This is the Load balancer
+* 192.168.12.10 - This is the first app node
+* 192.168.12.20 - This is the second app node
+* 192.168.12.30 - This is the Load balancer
 
 # Web Access
-http://192.168.12.30 - load balancer
-http://192.168.12.10:3000 - first app node
-http://192.168.12.10:3000 - second app node
+* http://192.168.12.30 - load balancer
+* http://192.168.12.10:3000 - first app node
+* http://192.168.12.10:3000 - second app node
 
 # Puppet
 
